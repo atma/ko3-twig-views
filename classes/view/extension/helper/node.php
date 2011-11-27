@@ -11,6 +11,7 @@ class View_Extension_Helper_Node extends Twig_Node {
      */
     protected $cs_tags = array(
         'html' => 'HTML',
+        'form' => 'Form',
     );
 
     /**

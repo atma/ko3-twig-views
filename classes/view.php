@@ -335,7 +335,7 @@ class View {
         }
 
         if (empty($this->_file)) {
-            throw new Kohana_Exception('You must set the teplate file to use within your view before rendering');
+            throw new Kohana_Exception('You must set the template file to use within your view before rendering');
         }
 
         // Combine local and global data and capture the output

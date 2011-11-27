@@ -36,7 +36,9 @@ abstract class Controller_Twig extends Controller {
         $this->environment = $this->template->environment();
         
 		if ($this->auto_render)
-        {	
+        {
+            $this->template->styles = array();
+            $this->template->scripts = array();
 		}
 
 		return parent::before();
@@ -48,6 +50,7 @@ abstract class Controller_Twig extends Controller {
 	 * @return void
 	 */
 	public function after() {
+        // Set the profile var if its enabled and request by query debug
         if (Kohana::$profiling === TRUE AND isset($_GET['debug']))
         {
             ob_start();
