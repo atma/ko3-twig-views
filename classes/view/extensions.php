@@ -40,6 +40,7 @@ class View_Extensions extends Twig_Extension {
             'obfuscate' => new Twig_Filter_Function('HTML::obfuscate'),
             // Numbers
             'num_format' => new Twig_Filter_Function('Num::format'),
+            'phone_format' => new Twig_Filter_Function('View_Helper::format_phone'),
             // Text
             'limit_words' => new Twig_Filter_Function('Text::limit_words'),
             'limit_chars' => new Twig_Filter_Function('Text::limit_chars'),
