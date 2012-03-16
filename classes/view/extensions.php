@@ -33,22 +33,23 @@ class View_Extensions extends Twig_Extension {
             //'timestamp' => new Twig_Filter_Function('strtotime'),
             'fuzzy_timesince' => new Twig_Filter_Function('Date::fuzzy_span'),
             // Strings
-            'plural' => new Twig_Filter_Function('Inflector::plural'),
-            'singular' => new Twig_Filter_Function('Inflector::singular'),
-            'humanize' => new Twig_Filter_Function('Inflector::humanize'),
+            'plural'        => new Twig_Filter_Function('Inflector::plural'),
+            'singular'      => new Twig_Filter_Function('Inflector::singular'),
+            'humanize'      => new Twig_Filter_Function('Inflector::humanize'),
             // HTML 
-            'obfuscate' => new Twig_Filter_Function('HTML::obfuscate'),
+            'obfuscate'     => new Twig_Filter_Function('HTML::obfuscate'),
+            'nl2br'         => new Twig_Filter_Function('nl2br'),
             // Numbers
-            'num_format' => new Twig_Filter_Function('Num::format'),
-            'phone_format' => new Twig_Filter_Function('View_Helper::format_phone'),
+            'num_format'    => new Twig_Filter_Function('Num::format'),
+            'phone_format'  => new Twig_Filter_Function('View_Helper::format_phone'),
             // Text
-            'limit_words' => new Twig_Filter_Function('Text::limit_words'),
-            'limit_chars' => new Twig_Filter_Function('Text::limit_chars'),
-            'auto_link' => new Twig_Filter_Function('Text::auto_link'),
-            'auto_p' => new Twig_Filter_Function('Text::auto_p'),
-            'bytes' => new Twig_Filter_Function('Text::bytes'),
-            'slug' => new Twig_Filter_Function('URL::slug'),
-            'session' => new Twig_Filter_Function('Session::instance()->get'),
+            'limit_words'   => new Twig_Filter_Function('Text::limit_words'),
+            'limit_chars'   => new Twig_Filter_Function('Text::limit_chars'),
+            'auto_link'     => new Twig_Filter_Function('Text::auto_link'),
+            'auto_p'        => new Twig_Filter_Function('Text::auto_p'),
+            'bytes'         => new Twig_Filter_Function('Text::bytes'),
+            'slug'          => new Twig_Filter_Function('URL::slug'),
+            'session'       => new Twig_Filter_Function('Session::instance()->get'),
         );
     }
 
