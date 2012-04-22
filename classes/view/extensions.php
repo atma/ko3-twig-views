@@ -17,6 +17,7 @@ class View_Extensions extends Twig_Extension {
             new View_Extension_HTML_TokenParser(),
             new View_Extension_Form_TokenParser(),
             new View_Extension_URL_TokenParser(),
+            new View_Extension_Thumbnail_TokenParser(),
             new View_Extension_Config_TokenParser(),
             new View_Extension_Session_TokenParser(),
         );
