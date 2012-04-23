@@ -19,6 +19,12 @@ class View_Helper {
             case 10:
                 $phone = preg_replace("/([0-9]{3})([0-9]{3})([0-9]{2})([0-9]{2})/", "($1) $2-$3-$4", $phone);
                 break;
+            case 9:
+                $phone = preg_replace("/([0-9]{3})([0-9]{3})([0-9]{3})/", "$1-$2-$3", $phone);
+                break;
+            case 8:
+                $phone = preg_replace("/([0-9]{3})([0-9]{2})([0-9]{3})/", "$1-$2-$3", $phone);
+                break;
             case 7:
                 $phone = preg_replace("/([0-9]{3})([0-9]{2})([0-9]{2})/", "$1-$2-$3", $phone);
                 break;
@@ -94,8 +100,11 @@ class View_Helper {
         if (!file_exists($thumbs_dir)) {
             mkdir($thumbs_dir, 0775, true);
         }
+        $new_width ? $new_width : null;
+        $new_height ? $new_height : null;
         $photo = Image::factory($filepath);
-        $photo->resize($new_width, $new_height, Image::AUTO);
+        if (($new_height < $photo->height AND $new_height !== null) OR ($new_width < $photo->width AND $new_width !== null))
+            $photo->resize($new_width, $new_height, Image::AUTO);
         $photo->save($thumbs_dir.$filename, $params['quality']);
 
         return $params['relative']
